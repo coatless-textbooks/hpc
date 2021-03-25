@@ -26,3 +26,9 @@ export PKG_CONFIG_PATH=${jags_base}/lib/pkgconfig
 Rscript -e "install.packages('rjags', repos='https://cloud.r-project.org/', configure.args='--enable-rpath')"
 # Install runjags using r-path
 Rscript -e "install.packages('runjags', repos='https://cloud.r-project.org/', configure.args='--enable-rpath')"
+
+# Register the bin location on path to pass runjags::testjags()
+touch ~/.bashrc
+cat << EOF >> ~/.bashrc
+export PATH="${jags_base}/bin/jags:\${PATH}"
+EOF
