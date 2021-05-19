@@ -1,0 +1,32 @@
+#%Module1.0####################################################################
+
+
+proc ModulesHelp { } {
+	global _module_name
+
+	puts stderr "The $_module_name modulefile defines the default system paths and"
+	puts stderr "environment variables needed to use the $_module_name libraries and tools."
+	puts stderr ""
+}
+
+set _module_name	[module-info name]
+
+## Change to be user-specifc path
+set approot ~/project-stat/software/ncurses/6.2
+
+module-whatis "       Name: ncurses"
+module-whatis "  Long name: ncurses - new curses library"
+module-whatis "    Version: 6.2"
+module-whatis "   Category: library"
+module-whatis "Description: Free software emulation of curses in System V Release 4.0 (SVr4), and more."
+module-whatis "        URL: https://invisible-island.net/ncurses/"
+module-whatis ""
+
+if { [ is-loaded gcc/7.2.0 ] } {} else { module load gcc/7.2.0 }
+
+prepend-path	LD_LIBRARY_PATH	    $approot/lib
+prepend-path	LD_RUN_PATH	        $approot/lib
+prepend-path    C_INCLUDE_PATH      $approot/include/ncurses
+prepend-path    CPLUS_INCLUDE_PATH  $approot/include/ncurses
+prepend-path    PATH                $approot/bin
+
