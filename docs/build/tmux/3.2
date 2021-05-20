@@ -1,0 +1,27 @@
+#%Module1.0####################################################################
+
+
+proc ModulesHelp { } {
+	global _module_name
+
+	puts stderr "The $_module_name modulefile defines the default system paths and"
+	puts stderr "environment variables needed to use the $_module_name libraries and tools."
+	puts stderr ""
+}
+
+set _module_name	[module-info name]
+
+## Change to be user-specifc path
+set approot ~/project-stat/software/tmux/3.2
+
+module-whatis "       Name: tmux"
+module-whatis "  Long name: tmux - terminal multiplexer"
+module-whatis "    Version: 3.2"
+module-whatis "   Category: library"
+module-whatis "Description: Switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal."
+module-whatis "        URL: https://github.com/tmux/tmux/wiki"
+module-whatis ""
+
+prepend-path    PATH                $approot/bin
+prepend-path    MANPATH             $approot/share/man
+
