@@ -1,3 +1,3 @@
 # Recipes for libevent
 
-Contained within are the modulefiles and [libevent](recipes/) for building boost. 
+Contained within are the modulefiles and [recipes](recipes/) for building libevent. 
