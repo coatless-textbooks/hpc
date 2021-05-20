@@ -12,7 +12,7 @@ proc ModulesHelp { } {
 set _module_name	[module-info name]
 
 ## Change to be user-specifc path
-set approot ~/project-stat/software/ncurses/6.2
+set approot /projects/stat/shared/$::env(USER)/software/ncurses/6.2
 
 module-whatis "       Name: ncurses"
 module-whatis "  Long name: ncurses - new curses library"
@@ -29,4 +29,6 @@ prepend-path	LD_RUN_PATH	        $approot/lib
 prepend-path    C_INCLUDE_PATH      $approot/include/ncurses
 prepend-path    CPLUS_INCLUDE_PATH  $approot/include/ncurses
 prepend-path    PATH                $approot/bin
+prepend-path --delim " " LDFLAGS "-L$approot/lib"
+prepend-path --delim " " CPPFLAGS "-I$approot/include/ncurses"
 

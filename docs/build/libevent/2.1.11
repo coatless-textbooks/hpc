@@ -12,7 +12,7 @@ proc ModulesHelp { } {
 set _module_name	[module-info name]
 
 ## Change to be user-specifc path
-set approot ~/project-stat/software/libevent/2.1.11
+set approot /projects/stat/shared/$::env(USER)/software/libevent/2.1.11
 
 module-whatis "       Name: libevent"
 module-whatis "  Long name: libevent - An event notification library"
@@ -26,3 +26,8 @@ if { [ is-loaded gcc/7.2.0 ] } {} else { module load gcc/7.2.0 }
 
 prepend-path	LD_LIBRARY_PATH	    $approot/lib
 prepend-path	LD_RUN_PATH	        $approot/lib
+prepend-path --delim " " LDFLAGS "-L $approot/lib"
+prepend-path --delim " " CPPFLAGS "-I $approot/include"
+prepend-path --delim " " CFLAGS "-I $approot/include"
+
+
