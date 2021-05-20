@@ -6,4 +6,14 @@ work on remote computing resources.
 
 ### Thanks!
 
-This work made use of the Illinois Campus Cluster, a computing resource that is operated by the [Illinois Campus Cluster Program (ICCP)](https://campuscluster.illinois.edu/) in conjunction with the [National Center for Supercomputing Applications (NCSA)](https://ncsa.illinois.edu) and which is supported by funds from the [University of Illinois at Urbana-Champaign](https://illinois.edu).
+This work made use of the Illinois Campus Cluster, a computing resource that is
+operated by the [Illinois Campus Cluster Program (ICCP)](https://campuscluster.illinois.edu/) 
+in conjunction with the [National Center for Supercomputing Applications (NCSA)](https://ncsa.illinois.edu)
+which is supported by funds from the [University of Illinois at Urbana-Champaign](https://illinois.edu).
+
+Conversations with the ICCP staff has also greatly helped in developing material. 
+In particular, I would like to thank:
+
+- Weddie Jackson
+- Matthew Long
+- Chit Khin
