@@ -1,3 +1,3 @@
-# Recipes for ncurses
+# Recipes for tmux
 
-Contained within are the modulefiles and [recipes](recipes/) for building ncurses. 
+Contained within are the modulefiles and [recipes](recipes/) for building tmux. 
