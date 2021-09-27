@@ -1,10 +1,12 @@
 # Storage
 
+For additional details related to the illinois campus cluster, please the [Storage and Data Guide](https://campuscluster.illinois.edu/resources/docs/storage-and-data-guide/)
+
 ## Storing Data & Code
 
 - Home Directory `~/`
-    - Up to **~2GB** (Soft cap)
-      / **~4GB** (Hard cap) with **nightly backups**.
+    - Up to **~5GB** (Soft cap)
+      / **~7GB** (Hard cap) with **nightly backups**.
     - Storage is **private**.
 - Project Spaces `/projects/stat/shared/$USER`
     - **~21TB** of shared space with **nightly backups**.
