@@ -173,8 +173,9 @@ found within the user's home directory at:
 ```
 
 Installing packages into the default location is problematic because any
-files placed within a user's home directory count against the directories
-space quota (~2Gb / 4Gb). As _R_ packages can take a considerable amount of
+files placed within a user's home directory count against the directory's
+space quota (for limits, please see ([Cluster Storage](cluster-storage.md)). 
+As _R_ packages can take a considerable amount of
 space when installed, the best course of action is to change the default
 library directory. Therefore, _R_ packages should be either stored in a
 project directory or a purchased space allocation on the cluster that an
