@@ -96,7 +96,8 @@ nav:
       - Common Jobs in Bash: pbs/bash-jobs.md
       - Common Jobs in R: pbs/r-jobs.md
     - Remote Compute Jobs in R: r-remote-jobs.md
-  - Job Statistics: slurm-job-information.md
-  - Custom modulefiles: creating-modulefiles.md
+  - Advanced:
+      - Job Statistics: slurm-job-information.md
+      - Creating Custom modulefiles: creating-modulefiles.md
   - Appendix:
     - Book Development Guide: mkdocs.md
