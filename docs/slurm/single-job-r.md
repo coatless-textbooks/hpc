@@ -2,7 +2,7 @@
 
 Consider the need to obtain random numbers across a **single** sample size under a specific mean.
 
-$$X_{N} = \mu + Z \sim \mathcal{N}_{N} \left( \mu, 1 \right}$$
+$$X_{N} = \mu + Z \sim \mathcal{N}_{N} \left( \mu, 1 \right)$$
 
 ## Sample Job Script
 
