@@ -27,17 +27,21 @@ Replace `<software>` with the name of the desired software module from
 
 ## Latest Version of _R_
 
-As of **September 2020**, the latest version of _R_ on ICC is 
-_R_ **4.0.1**. However, we recommend using _R_ **3.6.2** as the **4.0.1** base
-library has non-standard packages present. _R_ can be accessed by using: 
+As of **September 2021**, the latest version of _R_ on ICC is 
+_R_ **4.1.1**. We recommend using the latest version of R with the `_sandybridge` suffix.
+The reason for using `_sandybridge` is to ensure compatibility on older nodes inside of the `stat` partition.
+
+Moreover, with this version, the default library path ommits non-standard packages present. 
+
+_R_ can be accessed by using: 
 
 ```bash
 # Load software
-module load R/3.6.2
+module load R/4.1.1_sandybridge
 ```
 
 **Note:** If the version is not specified during the load, e.g. `module load R`,
-then the oldest version of _R_ will be used.
+then a default version of _R_ will be used. This default may change without warning.
 
 Once _R_ is loaded, the Terminal/non-GUI version of _R_ can be started by typing:
 
@@ -52,6 +56,18 @@ q(save = "no")
 ```
 
 This will terminate the _R_ session without saving any environment values. 
+
+### Debugging bad _R_ version
+
+Note, per our previous discussion, we request cluster users to load R using the `_sandybridge` suffix. 
+Failure to load R in this manner will result in:
+
+```bash
+*** caught illegal operation ***
+address 0x2b8c139d59ef, cause 'illegal operand'
+```
+
+The error will present itself only when matrix multiplication is present, e.g. `%*%`.
 
 
 ## Ask for Help
