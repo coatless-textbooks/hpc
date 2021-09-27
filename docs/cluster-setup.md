@@ -167,6 +167,9 @@ found within the user's home directory at:
 
 # location for R 4.0.z
 /home/$USER/R/x86_64-pc-linux-gnu-library/4.0
+
+# location for R 4.1.z
+/home/$USER/R/x86_64-pc-linux-gnu-library/4.1
 ```
 
 Installing packages into the default location is problematic because any
@@ -254,8 +257,8 @@ with:
 module load R/x.y.z
 ```
 
-where `x.y.z` is a supported version number, e.g. `module load R/3.6.2` will
-make available _R_ 3.6.2.
+where `x.y.z` is a supported version number, e.g. `module load R/4.1.1_sandybridge` will
+make available _R_ 4.1.1 that works on any cluster node.
 
 Once _R_ is loaded, packages can be installed by entering into _R_ or directly
 from bash. The prior approach will be preferred as it mimics local _R_ installation
