@@ -2,7 +2,10 @@
 
 **Note:** This technique was developed to submit jobs to the cluster due to 
 the job array being disabled long ago. With the switch to Slurm, the job array
-is now available.
+built-in feature has been activated. For details on how to use the built-in 
+Slurm job array, please see [Array Jobs with R in Slurm](slurm/array-jobs-r.md).
+
+## Problem statement 
 
 Consider the need to obtain random numbers across varying sample sizes and means.
 
