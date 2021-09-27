@@ -30,8 +30,9 @@ Replace `<software>` with the name of the desired software module from
 As of **September 2021**, the latest version of _R_ on ICC is 
 _R_ **4.1.1**. We recommend using the latest version of R with the `_sandybridge` suffix.
 The reason for using `_sandybridge` is to ensure compatibility on older nodes inside of the `stat` partition.
+For an example of a compatibility error, please see [Debugging Errors](debugging-errors.md).
 
-Moreover, with this version, the default library path ommits non-standard packages present. 
+Moreover, with this version, the default library does not contain any non-standard packages. 
 
 _R_ can be accessed by using: 
 
@@ -56,18 +57,6 @@ q(save = "no")
 ```
 
 This will terminate the _R_ session without saving any environment values. 
-
-### Debugging bad _R_ version
-
-Note, per our previous discussion, we request cluster users to load R using the `_sandybridge` suffix. 
-Failure to load R in this manner will result in:
-
-```bash
-*** caught illegal operation ***
-address 0x2b8c139d59ef, cause 'illegal operand'
-```
-
-The error will present itself only when matrix multiplication is present, e.g. `%*%`.
 
 
 ## Ask for Help
