@@ -1,15 +1,8 @@
 # Single Independent R Job
 
-Consider the need to obtain random numbers across varying sample sizes and means.
+Consider the need to obtain random numbers across a **single** sample size under a specific mean.
 
-$$N = \begin{cases}
-250 \\
-500 \\
-750 
-\end{cases}, \mu = \begin{cases}
-0 \\
-1.5
-\end{cases}$$
+$$X_{N} = \mu + Z \sim \mathcal{N}_{N} \left( \mu, 1 \right}$$
 
 ## Sample Job Script
 
