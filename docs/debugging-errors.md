@@ -21,3 +21,15 @@ When doing a long-running computation with `future.batchtools`, you may get the 
 client_loop: send disconnect: Broken pipe
 Connection to <host address> closed by remote host.
 ```
+
+## Bad randomize seed
+
+```
+Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated random numbers without specifying argument 'seed'. There is a risk that those random numbers are not statistically sound and the overall results might be invalid. To fix this, specify 'seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced via the L'Ecuyer-CMRG method. To disable this check, use 'seed=NULL', or set option 'future.rng.onMisuse' to "ignore".
+```
+
+## Global export issue
+
+```
+  The total size of the 11 globals that need to be exported for the future expression (‘...’) is 747.02 MiB. This exceeds the maximum allowed size of 500.00 MiB (option 'future.globals.maxSize'). The three largest globals are ‘...’ (742.19 MiB of class ‘numeric’), ‘...’ (1.74 MiB of class ‘numeric’) and ‘....’ (1.53 MiB of class ‘numeric’).
+```
