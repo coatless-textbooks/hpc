@@ -1,0 +1,30 @@
+#%Module1.0####################################################################
+
+
+proc ModulesHelp { } {
+	global _module_name
+
+	puts stderr "The $_module_name modulefile defines the default system paths and"
+	puts stderr "environment variables needed to use the $_module_name libraries and tools."
+	puts stderr ""
+}
+
+set _module_name	[module-info name]
+
+## Change to be user-specifc path
+set approot ~/project-stat/software/udunits/2.2.28
+
+module-whatis "       Name: udunits2"
+module-whatis "  Long name: udunits2 - unit conversion"
+module-whatis "    Version: 2.2.28"
+module-whatis "   Category: library"
+module-whatis "Description: NA."
+module-whatis "        URL: https://www.unidata.ucar.edu/software/udunits/"
+module-whatis ""
+
+prepend-path    PATH                $approot/bin
+prepend-path    MANPATH             $approot/share/man
+prepend-path	LD_LIBRARY_PATH	    $approot/lib
+prepend-path	LD_RUN_PATH	        $approot/lib
+prepend-path    UDUNITS2_INCLUDE    $approot/include
+prepend-path    UDUNITS2_LIBS       $approot/lib
