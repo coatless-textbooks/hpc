@@ -17,6 +17,6 @@ scontrol hold <jobids>
 
 When it is clear to resume processing the jobs, we would use: 
 
-``bash
+```bash
 scontrol release <jobids>
 ```
