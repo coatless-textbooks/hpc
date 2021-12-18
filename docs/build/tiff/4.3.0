@@ -1,0 +1,30 @@
+#%Module1.0####################################################################
+
+
+proc ModulesHelp { } {
+	global _module_name
+
+	puts stderr "The $_module_name modulefile defines the default system paths and"
+	puts stderr "environment variables needed to use the $_module_name libraries and tools."
+	puts stderr ""
+}
+
+set _module_name	[module-info name]
+
+## Change to be user-specifc path
+set approot ~/project-stat/software/tiff/4.3.0
+
+module-whatis  "       Name:  tiff"
+module-whatis  "    Version:  4.3.0"
+module-whatis  "   Category:  TIFF Library and Utilities"
+module-whatis  "Description:  Tag Image File Format (TIFF)"
+module-whatis  "              is a widely used format for storing image data."
+module-whatis  "        URL:  http://www.libtiff.org/"
+module-whatis  " "
+
+prepend-path    PATH                    $approot/bin
+prepend-path    CPATH                   $approot/include
+prepend-path    C_INCLUDE_PATH          $approot/include
+prepend-path    LD_LIBRARY_PATH         $approot/lib
+prepend-path    MANPATH                 $approot/share/man
+append-path     PKG_CONFIG_PATH         $approot/lib/pkgconfig
