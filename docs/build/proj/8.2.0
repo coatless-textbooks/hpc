@@ -24,6 +24,11 @@ module-whatis "             coordinate reference system (CRS) to another."
 module-whatis "        URL: https://proj.org/"
 module-whatis ""
 
+if { [ is-loaded gcc/7.2.0 ] } {} else { module load gcc/7.2.0 }
+if { [ is-loaded sqlite/3.25.2 ] } {} else { module load sqlite/3.25.2 }
+if { [ is-loaded udunits2/2.2.28 ] } {} else { module load udunits2/2.2.28 }
+if { [ is-loaded tiff/4.3.0 ] } {} else { module load tiff/4.3.0 }
+
 prepend-path    PATH                    $approot/bin
 prepend-path    CPATH                   $approot/include
 prepend-path    C_INCLUDE_PATH          $approot/include
