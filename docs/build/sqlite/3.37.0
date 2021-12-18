@@ -1,0 +1,30 @@
+#%Module1.0####################################################################
+
+
+proc ModulesHelp { } {
+	global _module_name
+
+	puts stderr "The $_module_name modulefile defines the default system paths and"
+	puts stderr "environment variables needed to use the $_module_name libraries and tools."
+	puts stderr ""
+}
+
+set _module_name	[module-info name]
+
+## Change to be user-specifc path
+set approot ~/project-stat/software/sqlite/3.37.0
+
+module-whatis  "       Name:  SQLite"
+module-whatis  "    Version:  3.37.0"
+module-whatis  "   Category:  Relational database management system"
+module-whatis  "Description:  SQLite is a relational database management system contained in"
+module-whatis  "              a C programming library."
+module-whatis  "        URL:  https://sqlite.org/"
+module-whatis  " "
+
+prepend-path    PATH                    $approot/bin
+prepend-path    CPATH                   $approot/include
+prepend-path    C_INCLUDE_PATH          $approot/include
+prepend-path    LD_LIBRARY_PATH         $approot/lib
+prepend-path    MANPATH                 $approot/share/man
+append-path     PKG_CONFIG_PATH         $approot/lib/pkgconfig
