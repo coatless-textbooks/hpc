@@ -1,0 +1,32 @@
+#%Module1.0####################################################################
+
+
+proc ModulesHelp { } {
+	global _module_name
+
+	puts stderr "The $_module_name modulefile defines the default system paths and"
+	puts stderr "environment variables needed to use the $_module_name libraries and tools."
+	puts stderr ""
+}
+
+set _module_name	[module-info name]
+
+## Change to be user-specifc path
+set approot ~/project-stat/software/proj/8.2.0
+
+module-whatis "       Name: PROJ"
+module-whatis "  Long name: PROJ - conversions between cartographic projections"
+module-whatis "    Version: 8.2.0"
+module-whatis "   Category: library"
+module-whatis "Description: PROJ is a generic coordinate transformation software"
+module-whatis "             that transforms geospatial coordinates from one"
+module-whatis "             coordinate reference system (CRS) to another."
+module-whatis "        URL: https://proj.org/"
+module-whatis ""
+
+prepend-path    PATH                    $approot/bin
+prepend-path    CPATH                   $approot/include
+prepend-path    C_INCLUDE_PATH          $approot/include
+prepend-path    LD_LIBRARY_PATH         $approot/lib
+prepend-path    MANPATH                 $approot/share/man
+append-path     PKG_CONFIG_PATH         $approot/lib/pkgconfig
