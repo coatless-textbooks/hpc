@@ -11,10 +11,8 @@ SOFTWARE_BUILD_DIR=$SOFTWARE_DL_DIR/${SOFTWARE_NAME}-build
 SOFTWARE_URL=https://www.sqlite.org/2021/${SOFTWARE_TAR}
 
 # Load modules used to compile libevent
-module load sqlite/3.37.0
 module load gcc/7.2.0
 module load libxml2/2.9.1
-module load udunits2/2.2.28
 
 # Construct a temporary directory
 mkdir -p $SOFTWARE_DL_DIR
