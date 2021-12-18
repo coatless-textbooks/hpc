@@ -8,3 +8,15 @@ squeue -l -p <partition> | grep PENDING | grep <USER> | awk ' {print $1}' | xarg
 ```
 
 where `<partition` is the queue and `<user>` is the username of who submitted the job.
+
+From there, we can suspend jobs by using: 
+
+```bash
+scontrol hold <jobids>
+```
+
+When it is clear to resume processing the jobs, we would use: 
+
+```bash
+scontrol release <jobids>
+```
