@@ -15,7 +15,7 @@ set _module_name	[module-info name]
 set approot ~/project-stat/software/geos/3.10.1
 
 module-whatis "       Name: GEOS"
-module-whatis "  Long name: GEOS - Geometry Engine – Open Source"
+module-whatis "  Long name: GEOS - Geometry Engine Open Source"
 module-whatis "    Version: 3.10.1"
 module-whatis "   Category: Library"
 module-whatis "Description: Spatial computational geometry"
@@ -28,6 +28,5 @@ if { [ is-loaded proj/8.2.0 ] } {} else { module load proj/8.2.0 }
 prepend-path    PATH                    $approot/bin
 prepend-path    CPATH                   $approot/include
 prepend-path    C_INCLUDE_PATH          $approot/include
-prepend-path    LD_LIBRARY_PATH         $approot/lib
-prepend-path    MANPATH                 $approot/share/man
-append-path     PKG_CONFIG_PATH         $approot/lib/pkgconfig
+prepend-path    LD_LIBRARY_PATH         $approot/lib64
+append-path     PKG_CONFIG_PATH         $approot/lib64/pkgconfig
