@@ -60,23 +60,23 @@ do
   # Establish a temporary download directory for software script
   mkdir -p ${tmp_download_folder}
 
-  # # Establish a location for the active script
-  # active_script="${tmp_download_folder}/${active_software_name}-${active_software_version}.sh"
-  #
-  # # Download the recipe script to obtain and install the required software
-  # wget -c ${base_url}/${active_software_name}/recipes/${active_software_version}.sh \
-  #      -O ${active_script}
-  #
-  # # Set permissions to run
-  # chmod +x ${active_script}
-  #
-  # # Begin install process
-  # source ${active_script}
-  #
-  # # Load software in the cluster system.
-  # module load ${active_software}
-  #
-  # # Tidy up by removing tmp directory
-  # rm -rf ${tmp_download_folder}
+  # Establish a location for the active script
+  active_script="${tmp_download_folder}/${active_software_name}-${active_software_version}.sh"
+
+  # Download the recipe script to obtain and install the required software
+  wget -c ${base_url}/${active_software_name}/recipes/${active_software_version}.sh \
+       -O ${active_script}
+
+  # Set permissions to run
+  chmod +x ${active_script}
+
+  # Begin install process
+  source ${active_script}
+
+  # Load software in the cluster system.
+  module load ${active_software}
+
+  # Tidy up by removing tmp directory
+  rm -rf ${tmp_download_folder}
 
 done
