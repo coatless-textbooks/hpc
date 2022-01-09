@@ -1,0 +1,34 @@
+#%Module1.0####################################################################
+
+
+proc ModulesHelp { } {
+	global _module_name
+
+	puts stderr "The $_module_name modulefile defines the default system paths and"
+	puts stderr "environment variables needed to use the $_module_name libraries and tools."
+	puts stderr ""
+}
+
+set _module_name	[module-info name]
+
+## Change to be user-specifc path
+set approot ~/project-stat/software/gdal/3.4.0
+
+module-whatis "       Name: GDAL"
+module-whatis "  Long name: GDAL - Geospatial Data Abstraction Library"
+module-whatis "    Version: 3.4.0"
+module-whatis "   Category: Library"
+module-whatis "Description: Translator library for raster and vector geospatial"
+module-whatis "             data formats."
+module-whatis "        URL: https://gdal.org/"
+module-whatis ""
+
+if { [ is-loaded gcc/7.2.0 ] } {} else { module load gcc/7.2.0 }
+if { [ is-loaded proj/8.2.0 ] } {} else { module load proj/8.2.0 }
+
+prepend-path    PATH                    $approot/bin
+prepend-path    CPATH                   $approot/include
+prepend-path    C_INCLUDE_PATH          $approot/include
+prepend-path    LD_LIBRARY_PATH         $approot/lib
+prepend-path    MANPATH                 $approot/share/man
+append-path     PKG_CONFIG_PATH         $approot/lib/pkgconfig
