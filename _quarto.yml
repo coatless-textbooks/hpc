@@ -31,7 +31,7 @@ book:
       chapters:
       - pbs/bash-jobs.qmd
       - pbs/r-jobs.qmd
-    - part: "Remote Compute Jobs"
+    - part: "Remote Computing"
       chapters:
       - r-remote-jobs.qmd
     - part: "Advanced"
