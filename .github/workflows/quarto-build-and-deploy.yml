@@ -14,17 +14,15 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          # To install LaTeX to build PDF book
-          tinytex: true
+        # with:
+        #   tinytex: true
 
-      # Handle installing R packages from DESCRIPTION file
+      - name: Install R packages from DESCRIPTION file
       - uses: r-lib/actions/setup-r-dependencies@v2
 
-      # Download latest version of Python
+      # - name: Download latest version of Python
       # - uses: actions/setup-python@v2
 
-      # Install python dependencies from requirements via pip
       #- name: "Install Python dependencies via Pip"
       #  run: |
       #    pip install -r requirements.txt
