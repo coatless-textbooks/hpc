@@ -2,62 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://hpc.thecoatlessprofessor.com/index.html</loc>
-    <lastmod>2023-01-13T04:11:15.520Z</lastmod>
+    <lastmod>2023-01-13T04:12:32.468Z</lastmod>
   </url>
   <url>
     <loc>https://hpc.thecoatlessprofessor.com/01-cluster-computing.html</loc>
-    <lastmod>2023-01-13T04:11:15.520Z</lastmod>
+    <lastmod>2023-01-13T04:12:32.468Z</lastmod>
   </url>
   <url>
     <loc>https://hpc.thecoatlessprofessor.com/02-cluster-software.html</loc>
-    <lastmod>2023-01-13T04:11:15.524Z</lastmod>
+    <lastmod>2023-01-13T04:12:32.468Z</lastmod>
   </url>
   <url>
     <loc>https://hpc.thecoatlessprofessor.com/03-cluster-storage.html</loc>
-    <lastmod>2023-01-13T04:11:15.524Z</lastmod>
+    <lastmod>2023-01-13T04:12:32.468Z</lastmod>
   </url>
   <url>
     <loc>https://hpc.thecoatlessprofessor.com/04-cluster-setup.html</loc>
-    <lastmod>2023-01-13T04:11:15.524Z</lastmod>
+    <lastmod>2023-01-13T04:12:32.472Z</lastmod>
   </url>
   <url>
     <loc>https://hpc.thecoatlessprofessor.com/slurm/single-job-r.html</loc>
-    <lastmod>2023-01-13T04:11:15.524Z</lastmod>
+    <lastmod>2023-01-13T04:12:32.472Z</lastmod>
   </url>
   <url>
     <loc>https://hpc.thecoatlessprofessor.com/slurm/array-jobs-r.html</loc>
-    <lastmod>2023-01-13T04:11:15.528Z</lastmod>
+    <lastmod>2023-01-13T04:12:32.472Z</lastmod>
   </url>
   <url>
     <loc>https://hpc.thecoatlessprofessor.com/slurm/custom-array-jobs-creation-r.html</loc>
-    <lastmod>2023-01-13T04:11:15.528Z</lastmod>
+    <lastmod>2023-01-13T04:12:32.472Z</lastmod>
   </url>
   <url>
     <loc>https://hpc.thecoatlessprofessor.com/slurm/bash-jobs.html</loc>
-    <lastmod>2023-01-13T04:11:15.528Z</lastmod>
+    <lastmod>2023-01-13T04:12:32.476Z</lastmod>
   </url>
   <url>
     <loc>https://hpc.thecoatlessprofessor.com/pbs/bash-jobs.html</loc>
-    <lastmod>2023-01-13T04:11:15.532Z</lastmod>
+    <lastmod>2023-01-13T04:12:32.476Z</lastmod>
   </url>
   <url>
     <loc>https://hpc.thecoatlessprofessor.com/pbs/r-jobs.html</loc>
-    <lastmod>2023-01-13T04:11:15.532Z</lastmod>
+    <lastmod>2023-01-13T04:12:32.476Z</lastmod>
   </url>
   <url>
     <loc>https://hpc.thecoatlessprofessor.com/r-remote-jobs.html</loc>
-    <lastmod>2023-01-13T04:11:15.532Z</lastmod>
+    <lastmod>2023-01-13T04:12:32.476Z</lastmod>
   </url>
   <url>
     <loc>https://hpc.thecoatlessprofessor.com/slurm-job-information.html</loc>
-    <lastmod>2023-01-13T04:11:15.532Z</lastmod>
+    <lastmod>2023-01-13T04:12:32.476Z</lastmod>
   </url>
   <url>
     <loc>https://hpc.thecoatlessprofessor.com/creating-modulefiles.html</loc>
-    <lastmod>2023-01-13T04:11:15.536Z</lastmod>
+    <lastmod>2023-01-13T04:12:32.480Z</lastmod>
   </url>
   <url>
     <loc>https://hpc.thecoatlessprofessor.com/debugging-errors.html</loc>
-    <lastmod>2023-01-13T04:11:15.536Z</lastmod>
+    <lastmod>2023-01-13T04:12:32.480Z</lastmod>
   </url>
 </urlset>
