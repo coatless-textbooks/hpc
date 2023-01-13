@@ -1,11 +1,8 @@
-# Submit Multiple Independent Jobs
+# Submit Multiple Independent Jobs {#chap-array-jobs-slurm-r}
 
-**Note:** This technique was developed to submit jobs to the cluster due to 
-the job array being disabled long ago. With the switch to Slurm, the job array
-built-in feature has been activated. For details on how to use the built-in 
-Slurm job array, please see [Array Jobs with R in Slurm](slurm/array-jobs-r.md).
+**Note:** This technique was developed to submit jobs to the cluster due to the job array being disabled long ago. With the switch to Slurm, the job array built-in feature has been activated. For details on how to use the built-in Slurm job array, please see @chap-array-jobs-slurm-r.
 
-## Problem statement 
+## Problem statement
 
 Consider the need to obtain random numbers across varying sample sizes and means.
 
@@ -22,13 +19,13 @@ $$N = \begin{cases}
 
 **sim_job.R**
 
-```r
+``` r
 --8<-- "slurm/scripts/sim_job.R"
 ```
 
 Download a copy onto the cluster with:
 
-```bash
+``` bash
 wget https://raw.githubusercontent.com/coatless/hpc/master/docs/slurm/scripts/sim_job.R
 
 chmod +x sim_job.R
@@ -38,19 +35,19 @@ chmod +x sim_job.R
 
 **inputs.txt**
 
-```bash
+``` bash
 --8<-- "slurm/scripts/inputs.txt"
 ```
 
 Download a copy onto the cluster with:
 
-```bash
+``` bash
 wget https://raw.githubusercontent.com/coatless/hpc/master/docs/slurm/scripts/inputs.txt
 ```
 
-**Note:** Parameters are best generated using `expand.grid()`. 
+**Note:** Parameters are best generated using `expand.grid()`.
 
-```r
+``` r
 N_vals = c(250, 500, 750)
 mu_vals = c(0, 1.5)
 
@@ -66,21 +63,20 @@ sim_frame
 
 Write the simulation parameter configuration to `inputs.txt` with:
 
-```r
+``` r
 write.table(sim_frame, file = "inputs.txt", 
             col.names = FALSE, row.names = FALSE)
 ```
 
-
 ## Faux Job Array Script
 
-```bash
+``` bash
 --8<-- "slurm/scripts/job_builder.sh"
 ```
 
 Download a copy and run on the cluster with:
 
-```bash
+``` bash
 # Download a copy
 wget https://raw.githubusercontent.com/coatless/hpc/master/docs/slurm/scripts/job_builder.sh
 
