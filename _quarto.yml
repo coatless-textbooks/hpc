@@ -1,0 +1,53 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "High Performance Computing"
+  reader-mode: true
+  author: "James Joseph Balamuta"
+  date: today
+  site-url: https://hpc.thecoatlessprofessor.com/
+  repo-url: https://github.com/coatless-textbooks/hpc/
+  repo-branch: main
+  repo-actions: [edit, issue]
+  open-graph: true
+  chapters:
+    - index.qmd
+
+    - part: "Overview of Cluster Computing"
+      chapters:
+        - 01-cluster-computing.qmd
+        - 02-cluster-software.qmd
+        - 03-cluster-storage.qmd
+        - 04-cluster-setup.qmd
+    - part: "SLURM Job Templates"
+      chapters:
+      - slurm/single-job-r.qmd
+      - slurm/array-jobs-r.qmd
+      - slurm/custom-array-jobs-creation-r.qmd
+      - slurm/bash-jobs.qmd
+    - part: "PBS Job Templates"
+      chapters:
+      - pbs/bash-jobs.qmd
+      - pbs/r-jobs.qmd
+    - part: "Remote Compute Jobs"
+      chapters:
+      - r-remote-jobs.qmd
+    - part: "Advanced"
+      chapters:
+        - slurm-job-information.qmd
+        - creating-modulefiles.qmd
+    - debugging-errors.qmd
+
+bibliography: references.bib
+format:
+  html:
+    theme:
+      - cosmo
+    code-link: true
+    callout-appearance: simple
+#  pdf:
+#    documentclass: scrreport
+
+editor: visual
