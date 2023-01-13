@@ -1,5 +1,11 @@
 # Single Independent R Job
 
+```{r}
+#| results: "asis"
+#| echo: false
+source("../_common.R")
+```
+
 Consider the need to obtain random numbers across a **single** sample size under a specific mean.
 
 $$X_{N} = \mu + Z \sim \mathcal{N}_{N} \left( \mu, 1 \right)$$
@@ -8,15 +14,17 @@ $$X_{N} = \mu + Z \sim \mathcal{N}_{N} \left( \mu, 1 \right)$$
 
 **sim_job.R**
 
-```r
---8<-- "slurm/scripts/sim_job.R"
+```{r}
+#| echo: false
+#| results: "asis"
+print_sh("scripts/sim_job.R")
 ```
 
 Download a copy and run it on the cluster with:
 
-```bash
+``` bash
 # Download a copy of the script onto the cluster
-wget https://raw.githubusercontent.com/coatless/hpc/master/docs/slurm/scripts/sim_job.R
+wget https://hpc.thecoatlessprofessor.com/slurm/scripts/sim_job.R
 
 # Execute the script with parameter values
 Rscript $HOME/sim_job.R --args 5 10
@@ -27,18 +35,16 @@ Rscript $HOME/sim_job.R --args 5 10
 
 **sim_single_launch.slurm**
 
-```bash
---8<-- "slurm/scripts/sim_single_launch.slurm"
+```{r}
+#| echo: false
+#| results: "asis"
+print_sh("scripts/sim_single_launch.slurm")
 ```
 
-```bash
+``` bash
 # Download a copy of the script onto the cluster
-wget https://raw.githubusercontent.com/coatless/hpc/master/docs/slurm/scripts/sim_single_launch.slurm
+wget https://hpc.thecoatlessprofessor.com/slurm/scripts/sim_single_launch.slurm
 
 # Queue the job on the Cluster
 sbatch sim_single_launch.slurm
 ```
-
-
-
-

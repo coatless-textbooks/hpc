@@ -1,19 +1,26 @@
 # Job Information
 
+```{r}
+#| results: "asis"
+#| echo: false
+source("_common.R")
+```
+
 Query all jobs within the last day
 
-```bqsh
+``` bqsh
 sacct --starttime=today --endtime=midnight --format=User,JobID,Jobname%50,partition,state,time,start,end,elapsed,MaxRss,MaxVMSize,nnodes,ncpus,nodelist --units=G
 ```
 
 Query information for a specific job:
-```bash
+
+``` bash
 sacct -j <jobid> --format=User,JobID,Jobname%50,partition,state,time,start,end,elapsed,MaxRss,MaxVMSize,nnodes,ncpus,nodelist
 ```
 
 See how nodes are configured.
 
-```bash
+``` bash
 # Customized information https://ask.cyberinfrastructure.org/t/how-do-i-get-the-list-of-features-and-resources-of-each-node-in-slurm/201
 sinfo -o "%20N  %10c  %10m  %25f  %10G "
 
@@ -23,13 +30,13 @@ scontrol show node
 
 See information for a specific node
 
-```bash
+``` bash
 scontrol show node "nodename"
 ```
 
 View queued job information for yourself
 
-```bash
+``` bash
 squeue --format="%.7i %.9P %.8j %.8u %.2t %.10M %.6D %C" -u $USER
 ```
 
