@@ -9,9 +9,6 @@ Depends:
 Imports:
     jsonlite,
 Suggests:
-    downlit,
-    htmltools,
-    jpeg,
     knitr
 Encoding: UTF-8
 License: CC NC ND 3.0
