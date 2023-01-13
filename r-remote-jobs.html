@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="James Joseph Balamuta">
-<meta name="dcterms.date" content="2023-01-13">
 
-<title>High Performance Computing</title>
+<title>High Performance Computing - 11&nbsp; Remote Computing Jobs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-cluster-computing.html" rel="next">
+<link href="./slurm-job-information.html" rel="next">
+<link href="./pbs/r-jobs.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -63,8 +62,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="High Performance Computing">
-<meta property="og:description" content="The goal of High Performance Computing on a Cluster with R is to inform and distribute various recipes and techniques for performing computational-intensive work on remote computing resources.">
+<meta property="og:title" content="High Performance Computing - 11&nbsp; Remote Computing Jobs">
 <meta property="og:site-name" content="High Performance Computing">
 </head>
 
@@ -74,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">High Performance Computing</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Remote Computing Jobs</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -107,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Welcome to HPC</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome to HPC</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -200,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-remote-jobs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Remote Computing Jobs</span></a>
+  <a href="./r-remote-jobs.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Remote Computing Jobs</span></a>
   </div>
 </li>
       </ul>
@@ -235,42 +233,21 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#welcome-to-hpc" id="toc-welcome-to-hpc" class="nav-link active" data-scroll-target="#welcome-to-hpc">Welcome to HPC</a>
-  <ul class="collapse">
-  <li><a href="#thanks" id="toc-thanks" class="nav-link" data-scroll-target="#thanks">Thanks!</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/coatless-textbooks/hpc/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/coatless-textbooks/hpc/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">High Performance Computing</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Remote Computing Jobs</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>James Joseph Balamuta </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 13, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -278,22 +255,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="welcome-to-hpc" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome to HPC</h1>
-<p>The goal of High Performance Computing on a Cluster with <em>R</em> is to inform and distribute various recipes and techniques for performing computational-intensive work on remote computing resources.</p>
-<section id="thanks" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="thanks">Thanks!</h2>
-<p>This work made use of the Illinois Campus Cluster, a computing resource that is operated by the <a href="https://campuscluster.illinois.edu/">Illinois Campus Cluster Program (ICCP)</a> in conjunction with the <a href="https://ncsa.illinois.edu">National Center for Supercomputing Applications (NCSA)</a> which is supported by funds from the <a href="https://illinois.edu">University of Illinois at Urbana-Champaign</a>.</p>
-<p>Conversations with the ICCP staff has also greatly helped in developing material. In particular, I would like to thank:</p>
-<ul>
-<li>Weddie Jackson</li>
-<li>Matthew Long</li>
-<li>Chit Khin</li>
-</ul>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -431,10 +394,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./pbs/r-jobs.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">R</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-cluster-computing.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Cluster Computing</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./slurm-job-information.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Job Information</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

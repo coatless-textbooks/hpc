@@ -1,0 +1,296 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "High Performance Computing",
+    "section": "",
+    "text": "Welcome to HPC\nThe goal of High Performance Computing on a Cluster with R is to inform and distribute various recipes and techniques for performing computational-intensive work on remote computing resources."
+  },
+  {
+    "objectID": "index.html#thanks",
+    "href": "index.html#thanks",
+    "title": "High Performance Computing",
+    "section": "Thanks!",
+    "text": "Thanks!\nThis work made use of the Illinois Campus Cluster, a computing resource that is operated by the Illinois Campus Cluster Program (ICCP) in conjunction with the National Center for Supercomputing Applications (NCSA) which is supported by funds from the University of Illinois at Urbana-Champaign.\nConversations with the ICCP staff has also greatly helped in developing material. In particular, I would like to thank:\n\nWeddie Jackson\nMatthew Long\nChit Khin"
+  },
+  {
+    "objectID": "01-cluster-computing.html#what-is-cluster-computing",
+    "href": "01-cluster-computing.html#what-is-cluster-computing",
+    "title": "1  Cluster Computing",
+    "section": "1.1 What is Cluster Computing?",
+    "text": "1.1 What is Cluster Computing?\nDefinition: Cluster\nA cluster is a set of computers that are connected together and share resources as if they were one gigantic computer."
+  },
+  {
+    "objectID": "01-cluster-computing.html#how-does-cluster-computing-work",
+    "href": "01-cluster-computing.html#how-does-cluster-computing-work",
+    "title": "1  Cluster Computing",
+    "section": "1.2 How Does Cluster Computing WorK?",
+    "text": "1.2 How Does Cluster Computing WorK?\nDefinition: Parallel Processing\nParallel Processing is the act of carrying out multiple tasks simultaneously to solve a problem. This is accomplished by dividing the problem into independent subparts, which are then solved concurrently.\nDefinition: Jobs\nJobs denote the independent subparts."
+  },
+  {
+    "objectID": "01-cluster-computing.html#why-use-cluster-computing",
+    "href": "01-cluster-computing.html#why-use-cluster-computing",
+    "title": "1  Cluster Computing",
+    "section": "1.3 Why use Cluster Computing?",
+    "text": "1.3 Why use Cluster Computing?\nPros\n\nSpeeds up simulations by allowing iterations to be run simultaneously.\nProvides more resources for computations.\n\ne.g. CPU Cores, RAM, Hard Drive Space, and Graphics Cards (GPUs).\n\nNightly snapshots/backups of files.\nExtends the lifespan of your computer.\n\nCons\n\nSimulations are not instantly run.\n\nNeed to “queue” for resources.\n\nHigher barrier of entry due to knowledge requirements.\nPoorly handles opening and closing data sets.\nAdding or updating software is complex."
+  },
+  {
+    "objectID": "02-cluster-software.html#software-modules",
+    "href": "02-cluster-software.html#software-modules",
+    "title": "2  Cluster Software",
+    "section": "2.1 Software Modules",
+    "text": "2.1 Software Modules\nUnlike a traditional desktop, you must load the different software that you wish to use into the environment via modulefiles. The list of supported software can be found on Software List or by typing:\nmodule avail"
+  },
+  {
+    "objectID": "02-cluster-software.html#viewing-retrieving-and-disabling-module-software",
+    "href": "02-cluster-software.html#viewing-retrieving-and-disabling-module-software",
+    "title": "2  Cluster Software",
+    "section": "2.2 Viewing, Retrieving, and Disabling Module Software",
+    "text": "2.2 Viewing, Retrieving, and Disabling Module Software\nThe most frequently used module commands are:\nmodule list              # See active software modules\nmodule load <software>   # Enable software\nmodule unload <software> # Disable software\nmodule purge             # Removes all active modules\nReplace <software> with the name of the desired software module from module avail."
+  },
+  {
+    "objectID": "02-cluster-software.html#latest-version-of-r",
+    "href": "02-cluster-software.html#latest-version-of-r",
+    "title": "2  Cluster Software",
+    "section": "2.3 Latest Version of R",
+    "text": "2.3 Latest Version of R\nAs of September 2021, the latest version of R on ICC is R 4.1.1. We recommend using the latest version of R with the _sandybridge suffix. The reason for using _sandybridge is to ensure compatibility on older nodes inside of the stat partition. For an example of a compatibility error, please see (debugging-errors?).\nMoreover, with this version, the default library does not contain any non-standard packages.\nR can be accessed by using:\n# Load software\nmodule load R/4.1.1_sandybridge\nNote: If the version is not specified during the load, e.g. module load R, then a default version of R will be used. This default may change without warning.\nOnce R is loaded, the Terminal/non-GUI version of R can be started by typing:\nR\nTo exit an R session on the cluster, type inside R:\nq(save = \"no\")\nThis will terminate the R session without saving any environment values."
+  },
+  {
+    "objectID": "02-cluster-software.html#ask-for-help",
+    "href": "02-cluster-software.html#ask-for-help",
+    "title": "2  Cluster Software",
+    "section": "2.4 Ask for Help",
+    "text": "2.4 Ask for Help\nICC’s help desk (via help@campuscluster.illinois.edu) can help install software on ICC. Please send them an e-mail and CC your advisor.\n\n2.4.1 Writing a Custom Module\nIt is possible to compile and create your own modules. For details, see the tutorial A Modulefile Approach to Compiling R on a Cluster."
+  },
+  {
+    "objectID": "03-cluster-storage.html#storing-data-code",
+    "href": "03-cluster-storage.html#storing-data-code",
+    "title": "3  Storage",
+    "section": "3.1 Storing Data & Code",
+    "text": "3.1 Storing Data & Code\n\nHome Directory ~/\n\nUp to ~5GB (Soft cap) / ~7GB (Hard cap) with nightly backups.\nStorage is private.\n\nProject Spaces /projects/stat/shared/$USER\n\n~21TB of shared space with nightly backups.\nStorage is shared among stat members.\n\nTemporary Networked Storage /scratch\n\n~10TB of space purged after 30 days with no backup.\nStorage is private.\n\n\nSoft caps: gently warn the user to lower their storage size. Hard caps: prevent the user from adding new files."
+  },
+  {
+    "objectID": "03-cluster-storage.html#backups",
+    "href": "03-cluster-storage.html#backups",
+    "title": "3  Storage",
+    "section": "3.2 Backups",
+    "text": "3.2 Backups\n\n3.2.1 Backup Info\n\nDaily night time backups.\n30 days of backups exist.\nNo off-site backups for disaster recovery.\n\n\n\n3.2.2 Location of Backups\n\nHome Directory ~/\n\n/gpfs/iccp/home/.snapshots/home_YYYYMMDD*/$USER\n\nProject Directory /projects/stat/shared/$USER\n\n/gpfs/iccp/projects/stat/.snapshots/statistics_YYYYMMDD*"
+  },
+  {
+    "objectID": "04-cluster-setup.html#secure-shell-ssh-setup",
+    "href": "04-cluster-setup.html#secure-shell-ssh-setup",
+    "title": "4  Cluster Setup",
+    "section": "4.1 Secure Shell (SSH) Setup",
+    "text": "4.1 Secure Shell (SSH) Setup\nFor accessing a cluster from command line, Secure Shell (SSH) is preferred. Access to the cluster requires typing out each time:\nssh netid@cc-login.campuscluster.illinois.edu\n# password\nConnecting in this manner is tedious since it involves repetitively typing out login credentials. There are two tricks that void the necessity to do so. Effectively, we have:\n\nPasswordless login\n\nPublic/Private SSH Keys\n\nAlias connection names\n\nSSH Config\n\n\nThus, instead of entering a password, the local computer can submit a private key to be verified by a server. Not only is this more secure, but it avoids the hassle of remembering the password and typing it out while observers watch. Secondly, the connection alias will allow for typing:\nssh icc\nNot bad eh?\n\n4.1.1 Generating an SSH Key\nOn your local computer, open up Terminal and type:\n## Run:\nssh-keygen -t rsa -C \"netid@illinois.edu\"\n## Respond to:\n# Enter file in which to save the key (/home/demo/.ssh/id_rsa): # [Press enter]\n# Enter passphrase (empty for no passphrase): # Write short password\n\n\n4.1.2 Copy SSH Key to Server\nNext, let’s copy the generated key from your local computer onto the cluster.\n## Run:\nssh-copy-id netid@cc-login.campuscluster.illinois.edu\nOn macOS, prior to using ssh-copy-id, the command will need to be installed. Homebrew provides a formula that will setup the command. Install using:\n# Install homebrew\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)\"\n# Install the required command binary\nbrew install ssh-copy-id\n\n\n4.1.3 SSH Config File\nInside of ~/.ssh/config, add the following host configuration. Make sure to replace <netid> value with your personal netid.\nHost icc\n    HostName cc-login.campuscluster.illinois.edu\n    User netid\nNote: This assumes a default location is used for the SSH key. If there is a custom SSH key location add IdentityFile ~/.ssh/sshkeyname.key after the User line."
+  },
+  {
+    "objectID": "04-cluster-setup.html#bash-aliases",
+    "href": "04-cluster-setup.html#bash-aliases",
+    "title": "4  Cluster Setup",
+    "section": "4.2 Bash Aliases",
+    "text": "4.2 Bash Aliases\nBash has the ability to create command aliases through alias. The primary use is to take long commands and create short-cuts to avoid typing them. Alternatively, this allows one to also rename commonly used commands. For example, one could modify the ls command to always list each file and show all hidden files with:\nalias ls='ls -la'` .\nWe suggest creating a ~/.bash_aliases on the cluster and filling it with:\n--8<-- \"config/.bash_aliases\"\nYou may download this directly onto the cluster using:\nwget https://raw.githubusercontent.com/coatless/hpc/master/docs/config/.bash_aliases\nTo ensure bash aliases are available, we need to add the file to ~/.bashrc:\n--8<-- \"config/.bashrc\"\nNote: the load modules component is shown\nYou may download this directly onto the cluster using:\nrm -rf ~/.bashrc\nwget https://raw.githubusercontent.com/coatless/hpc/master/docs/config/.bashrc"
+  },
+  {
+    "objectID": "04-cluster-setup.html#optional-github-personal-access-token-pat",
+    "href": "04-cluster-setup.html#optional-github-personal-access-token-pat",
+    "title": "4  Cluster Setup",
+    "section": "4.3 Optional: GitHub Personal Access Token (PAT)",
+    "text": "4.3 Optional: GitHub Personal Access Token (PAT)\nWe briefly summarize the process for getting and registering a GitHub Personal Access Token in R.\n\n\n\nPAT Token Walkthrough Video\n\n\nThe token may be created at: https://github.com/settings/tokens\nFrom there, we can add it to the R session with:\ntouch ~/.Renviron\ncat << EOF >> ~/.Renviron\nGITHUB_TOKEN=\"your_github_token_here\"\nGITHUB_PAT=\"your_github_token_here\"\nEOF\nAlternatively, within R, the token can be added by typing:\nfile.edit(\"~/.Renviron\")\nThen, writing in the configuration file:\nGITHUB_TOKEN=\"your_github_token_here\"\nGITHUB_PAT=\"your_github_token_here\""
+  },
+  {
+    "objectID": "04-cluster-setup.html#default-r-package-storage-location",
+    "href": "04-cluster-setup.html#default-r-package-storage-location",
+    "title": "4  Cluster Setup",
+    "section": "4.4 Default R Package Storage Location",
+    "text": "4.4 Default R Package Storage Location\nR’s default library directory where packages are installed into is found within the user’s home directory at:\n# location for R 3.6.z\n/home/$USER/R/x86_64-pc-linux-gnu-library/3.6\n\n# location for R 4.0.z\n/home/$USER/R/x86_64-pc-linux-gnu-library/4.0\n\n# location for R 4.1.z\n/home/$USER/R/x86_64-pc-linux-gnu-library/4.1\nInstalling packages into the default location is problematic because any files placed within a user’s home directory count against the directory’s space quota (for limits, please see (cluster-storage?)). As R packages can take a considerable amount of space when installed, the best course of action is to change the default library directory. Therefore, R packages should be either stored in a project directory or a purchased space allocation on the cluster that an investor may purchase.\nThe path to an investor’s space is given as:\n/projects/<investor>/shared/$USER\nFrequently, the cluster staff will create a symlink into the investor’s directory once authorization is given. In the case of Statistics, the investor name is stat, so the directory would be either:\n/projects/stat/shared/$USER\n# or the symlink version:\n~/project-stat/\nIn any case, we recommend creating and registering an r-pkgs directory under the appropriate project space. The registration with R is done using the R_LIBS_USER variable in ~/.Renvion.\n# Setup the .Renviron file in the home directory\ntouch ~/.Renviron\n\n# Append a single variable into the Renvironment file\ncat << 'EOF' >> ~/.Renviron\n# Location to R library\nR_LIBS_USER=~/project-stat/R/%p-library/%v\nEOF\n\n# Construct the path\nRscript -e 'dir.create(Sys.getenv(\"R_LIBS_USER\"), recursive = TRUE)'\nUnder this approach, we have move the location of the default package directory to:\n~/project-stat/R/%p-library/%v\n# the expanded version of %p and %v give:\n~/project-stat/R/x86_64-pc-linux-gnu-library/x.y\nNote: After each minor R version upgrade of R x.y, you will need to recreate the package storage directory using:\nRscript -e 'dir.create(Sys.getenv(\"R_LIBS_USER\"), recursive = TRUE)'\nOne question that arises:\n\nWhy not set up a generic personal library directory called ~/Rlibs?\n\nWe avoided a generic name for two reasons:\n\nNew “major” releases of R – and sometime minor versions – are incompatible with the old packages.\nVersioning by number allows for graceful downgrades if needed.\n\nIn the case of the first bullet, its better to start over from a new directory to ensure clean builds.\nThough, you could opt not to and remember:\nupdate.packages(ask = FALSE, checkBuilt = TRUE)"
+  },
+  {
+    "objectID": "04-cluster-setup.html#install-r-packages-into-library",
+    "href": "04-cluster-setup.html#install-r-packages-into-library",
+    "title": "4  Cluster Setup",
+    "section": "4.5 Install R packages into library",
+    "text": "4.5 Install R packages into library\nPrior to installing an R package, make sure to load the appropriate R version with:\nmodule load R/x.y.z\nwhere x.y.z is a supported version number, e.g. module load R/4.1.1_sandybridge will make available R 4.1.1 that works on any cluster node.\nOnce R is loaded, packages can be installed by entering into R or directly from bash. The prior approach will be preferred as it mimics local R installation procedures while the latter approach is useful for one-off packages installations.\nEnter into an interactive R session from bash by typing:\nR\nThen, inside of R, the package installation may be done using:\n# Install a package\ninstall.packages('remotes', repos = 'https://cloud.r-project.org')\n\n# Exit out of R and return to bash.\nq(save = \"no\")\nUnlike the native R installation route, installing packages under bash uses the Rscript command and requires writing the install command as a string:\nRscript -e \"install.packages('remotes', repos = 'https://cloud.r-project.org')\"\nBe careful when using quotations to specify packages. For each of these commands, we begin and end with \" and, thus, inside the command we use ' to denote strings. With this approach, escaping character strings is avoided.\n\n4.5.1 Installing Packages into Development Libraries\nIf you need to use a different library path than what was setup as the default, e.g. ~/project-stat/r-libs, first create the directory and, then, specify a path to it with lib = '' in `install.packages().\nmkdir -p ~/project-stat/devel-pkg\nRscript -e \"install.packages('remotes', lib = '~/project-stat/devel-pkg',\n                             repos = 'https://cloud.r-project.org/')\"\n\n\n4.5.2 Installing Packages from GitHub\nFor packages stored on GitHub, there are two variants for installation depending on the state of the repository. If the repository is public, then the standard install_github(\"user/repo\") may be used. On the other hand, if the repository is private, the package installation call must be accompanied by a GitHub Personal Access Token in the auth_token='' parameter of install_github(). In the prior step, if the ~/.Renviron contains GITHUB_PAT variable, there is no need to specify in the install_github() call as it will automatically be picked up.\n# Install package from GitHub\nRscript -e \"remotes::install_github('coatless/visualize')\"\n\n# Install from a private repository on GitHub\nRscript -e \"remotes::install_github('stat385/netid',\n                                     auth_token = 'abc')\"\n\n\n4.5.3 Parallelized package installation\nBy default, all users are placed onto the login nodes. Login nodes are configured for staging and submitting jobs not for installing software. The best practice and absolute fastest way to install software is to use an interactive job. Interactive jobs place the user directly on a compute node with the requested resources, e.g. 10 CPUs or 5GB of memory per CPU.\nBefore installing multiple R packages, we recommend creating an interactive job with:\nsrun --cpus-per-task=10 --pty bash\nOnce on the interactive node, load the appropriate version of R:\nmodule load R/x.y.z # where x.y.z is the version number\nFrom here, make sure every package installation call uses the Ncpus = parameter set equal to the number of cores requested for the interactive job.\nRscript -e \"install.packages('remotes', repos = 'https://cloud.r-project.org', Ncpus = 10L)\""
+  },
+  {
+    "objectID": "slurm/single-job-r.html#sample-job-script",
+    "href": "slurm/single-job-r.html#sample-job-script",
+    "title": "5  Single Independent R Job",
+    "section": "5.1 Sample Job Script",
+    "text": "5.1 Sample Job Script\nsim_job.R\n--8<-- \"slurm/scripts/sim_job.R\"\nDownload a copy and run it on the cluster with:\n# Download a copy of the script onto the cluster\nwget https://raw.githubusercontent.com/coatless/hpc/master/docs/slurm/scripts/sim_job.R\n\n# Execute the script with parameter values\nRscript $HOME/sim_job.R --args 5 10\n# [1]  9.006482 11.288477 11.109700 12.280027  9.500943"
+  },
+  {
+    "objectID": "slurm/single-job-r.html#sample-slurm-submission-file",
+    "href": "slurm/single-job-r.html#sample-slurm-submission-file",
+    "title": "5  Single Independent R Job",
+    "section": "5.2 Sample Slurm Submission File",
+    "text": "5.2 Sample Slurm Submission File\nsim_single_launch.slurm\n--8<-- \"slurm/scripts/sim_single_launch.slurm\"\n# Download a copy of the script onto the cluster\nwget https://raw.githubusercontent.com/coatless/hpc/master/docs/slurm/scripts/sim_single_launch.slurm\n\n# Queue the job on the Cluster\nsbatch sim_single_launch.slurm"
+  },
+  {
+    "objectID": "slurm/array-jobs-r.html#sample-job-script",
+    "href": "slurm/array-jobs-r.html#sample-job-script",
+    "title": "6  Array Submission of Multiple Independent R Jobs",
+    "section": "6.1 Sample Job Script",
+    "text": "6.1 Sample Job Script\nsim_job.R\n--8<-- \"slurm/scripts/sim_job.R\"\nDownload a copy onto the cluster with:\nwget https://raw.githubusercontent.com/coatless/hpc/master/docs/slurm/scripts/sim_job.R\n\nchmod +x sim_job.R"
+  },
+  {
+    "objectID": "slurm/array-jobs-r.html#sample-parameter-inputs",
+    "href": "slurm/array-jobs-r.html#sample-parameter-inputs",
+    "title": "6  Array Submission of Multiple Independent R Jobs",
+    "section": "6.2 Sample Parameter Inputs",
+    "text": "6.2 Sample Parameter Inputs\ninputs.txt\n--8<-- \"slurm/scripts/inputs.txt\"\nDownload a copy onto the cluster with:\n# Download a pre-made inputs.txt onto the cluster\nwget https://raw.githubusercontent.com/coatless/hpc/master/docs/slurm/scripts/inputs.txt\nNote: Parameters are best generated using expand.grid().\nN_vals = c(250, 500, 750)\nmu_vals = c(0, 1.5)\n\nsim_frame = expand.grid(N = N_vals, mu = mu_vals)\nsim_frame\n# 250 0.0\n# 500 0.0\n# 750 0.0\n# 250 1.5\n# 500 1.5\n# 750 1.5\nWrite the simulation parameter configuration to inputs.txt with:\nwrite.table(sim_frame, file = \"inputs.txt\", \n            col.names = FALSE, row.names = FALSE)"
+  },
+  {
+    "objectID": "slurm/array-jobs-r.html#array-job-launch",
+    "href": "slurm/array-jobs-r.html#array-job-launch",
+    "title": "6  Array Submission of Multiple Independent R Jobs",
+    "section": "6.3 Array Job Launch",
+    "text": "6.3 Array Job Launch\nsim_array_launch.slurm\n--8<-- \"slurm/scripts/sim_array_launch.slurm\"\nDownload a copy and run it on the cluster with:\n# Download script file\nwget https://raw.githubusercontent.com/coatless/hpc/master/docs/slurm/scripts/sim_array_launch.slurm\n\n# Queue the job on the Cluster\nsbatch sim_array_launch.slurm\nNote: %A will be replaced by the value of the SLURM_ARRAY_JOB_ID environment variable and %a will be replaced by the value of SLURM_ARRAY_TASK_ID environment variable. For example, SLURM_ARRAY_JOB_ID corresponds to the number assigned to the job in the queue and SLURM_ARRAY_TASK_ID relates to a value in the job array. In the case of this example, the SLURM_ARRAY_TASK_ID would take on values from 1 to 6."
+  },
+  {
+    "objectID": "slurm/custom-array-jobs-creation-r.html#problem-statement",
+    "href": "slurm/custom-array-jobs-creation-r.html#problem-statement",
+    "title": "7  Submit Multiple Independent Jobs",
+    "section": "7.1 Problem statement",
+    "text": "7.1 Problem statement\nConsider the need to obtain random numbers across varying sample sizes and means.\n\\[N = \\begin{cases}\n250 \\\\\n500 \\\\\n750\n\\end{cases}, \\mu = \\begin{cases}\n0 \\\\\n1.5\n\\end{cases}\\]"
+  },
+  {
+    "objectID": "slurm/custom-array-jobs-creation-r.html#sample-job-script",
+    "href": "slurm/custom-array-jobs-creation-r.html#sample-job-script",
+    "title": "7  Submit Multiple Independent Jobs",
+    "section": "7.2 Sample Job script",
+    "text": "7.2 Sample Job script\nsim_job.R\n--8<-- \"slurm/scripts/sim_job.R\"\nDownload a copy onto the cluster with:\nwget https://raw.githubusercontent.com/coatless/hpc/master/docs/slurm/scripts/sim_job.R\n\nchmod +x sim_job.R"
+  },
+  {
+    "objectID": "slurm/custom-array-jobs-creation-r.html#sample-parameter-inputs",
+    "href": "slurm/custom-array-jobs-creation-r.html#sample-parameter-inputs",
+    "title": "7  Submit Multiple Independent Jobs",
+    "section": "7.3 Sample Parameter Inputs",
+    "text": "7.3 Sample Parameter Inputs\ninputs.txt\n--8<-- \"slurm/scripts/inputs.txt\"\nDownload a copy onto the cluster with:\nwget https://raw.githubusercontent.com/coatless/hpc/master/docs/slurm/scripts/inputs.txt\nNote: Parameters are best generated using expand.grid().\nN_vals = c(250, 500, 750)\nmu_vals = c(0, 1.5)\n\nsim_frame = expand.grid(N = N_vals, mu = mu_vals)\nsim_frame\n# 250 0.0\n# 500 0.0\n# 750 0.0\n# 250 1.5\n# 500 1.5\n# 750 1.5\nWrite the simulation parameter configuration to inputs.txt with:\nwrite.table(sim_frame, file = \"inputs.txt\", \n            col.names = FALSE, row.names = FALSE)"
+  },
+  {
+    "objectID": "slurm/custom-array-jobs-creation-r.html#faux-job-array-script",
+    "href": "slurm/custom-array-jobs-creation-r.html#faux-job-array-script",
+    "title": "7  Submit Multiple Independent Jobs",
+    "section": "7.4 Faux Job Array Script",
+    "text": "7.4 Faux Job Array Script\n--8<-- \"slurm/scripts/job_builder.sh\"\nDownload a copy and run on the cluster with:\n# Download a copy\nwget https://raw.githubusercontent.com/coatless/hpc/master/docs/slurm/scripts/job_builder.sh\n\n# Enable the script to run.\nchmod +x job_builder.sh\n\n# Submit jobs to the queue\n./job_builder.sh"
+  },
+  {
+    "objectID": "slurm/bash-jobs.html#single-script",
+    "href": "slurm/bash-jobs.html#single-script",
+    "title": "8  Bash",
+    "section": "8.1 Single script",
+    "text": "8.1 Single script\nsim-script.sh\n#!/bin/bash\n\n## Ensure that only 2 parameters are passed in ----\nif [ $# -ne 2 ]; then\n    echo \"$0: usage: ./sim-script param1 param2\"\n    exit 1\nfi\n\n# Retrieve parameters passed in\nparam1 = $1\nparam2 = $2\n\necho \"param1 = ${param1}; param2 = ${param2}\"\n\n$#: number of arguments passed;\n$0: name of the shell or shell script;\n$1: the first argument;\n$n: the nth argument (substitute n with number);\n$*: all arguments, space issues if unquoted, use \"$@\";\n$@: all arguments, expands to separate words; or\n(Bonus) $?: Exit status of last script (0 is success)."
+  },
+  {
+    "objectID": "slurm/bash-jobs.html#script-with-fixed-parameters",
+    "href": "slurm/bash-jobs.html#script-with-fixed-parameters",
+    "title": "8  Bash",
+    "section": "8.2 Script with Fixed Parameters",
+    "text": "8.2 Script with Fixed Parameters\n#!/bin/bash\n\n## Describe requirements for computing ----\n#PBS -q secondary \n#PBS -l nodes=1:ppn=1\n#PBS -l walltime=04:00:00\n\n## Set variables ----\nparam1 = 1\nparam2 = 2\n\n## Start simulation study ----\ncd ~/sim-dir\n./sim-script param1 param2"
+  },
+  {
+    "objectID": "slurm/bash-jobs.html#script-with-varying-parameters",
+    "href": "slurm/bash-jobs.html#script-with-varying-parameters",
+    "title": "8  Bash",
+    "section": "8.3 Script with Varying Parameters",
+    "text": "8.3 Script with Varying Parameters\n#!/bin/bash\n\n## Describe requirements for computing ----\n#PBS -q secondary \n#PBS -l nodes=1:ppn=1 \n#PBS -l walltime=04:00:00\n\n## Set array variables ----\nparam1 = ({1, 2, 3})\nparam2 = ({4, 5, 6})\n\n## Start simulation study ----\ncd ~/sim-dir\nfor ((i=0;i<${#param[@]};++i)); do\n    ./sim-script ${param1[i]} ${param2[i]}\ndone"
+  },
+  {
+    "objectID": "slurm/bash-jobs.html#parallelized-script-with-varying-parameters",
+    "href": "slurm/bash-jobs.html#parallelized-script-with-varying-parameters",
+    "title": "8  Bash",
+    "section": "8.4 Parallelized Script with Varying Parameters",
+    "text": "8.4 Parallelized Script with Varying Parameters\n#!/bin/bash\n\n## Describe requirements for computing ----\n#PBS -q secondary \n#PBS -l nodes=1:ppn=3 \n#PBS -l walltime=04:00:00\n\n## Set array variables ----\nparam1=({1,2,3})\nparam2=({4,5,6})\n\n## Start simulation study ----\ncd ~/sim-dir\n\n## Run simulations in parallel ----\nfor ((i=0;i<${#param[@]};++i)); do\n    ./sim-script ${param1[i]} ${param2[i]} & # Ampersand runs script in background\n    process_id[i]=$!                         # Store the Process ID\ndone\n\n## Wait for all processes to complete ----\nfor ((i=0;i<${#param[@]};++i)); do\n    echo \"Awaiting results for ${process_id[i]}.\"\n    wait ${process_id[i]}\ndone"
+  },
+  {
+    "objectID": "pbs/bash-jobs.html#single-script",
+    "href": "pbs/bash-jobs.html#single-script",
+    "title": "9  Bash",
+    "section": "9.1 Single script",
+    "text": "9.1 Single script\nsim-script.sh\n#!/bin/bash\n\n## Ensure that only 2 parameters are passed in ----\nif [ $# -ne 2 ]; then\n    echo \"$0: usage: ./sim-script param1 param2\"\n    exit 1\nfi\n\n# Retrieve parameters passed in\nparam1 = $1\nparam2 = $2\n\necho \"param1 = ${param1}; param2 = ${param2}\"\n\n$#: number of arguments passed;\n$0: name of the shell or shell script;\n$1: the first argument;\n$n: the nth argument (substitute n with number);\n$*: all arguments, space issues if unquoted, use \"$@\";\n$@: all arguments, expands to separate words; or\n(Bonus) $?: Exit status of last script (0 is success)."
+  },
+  {
+    "objectID": "pbs/bash-jobs.html#script-with-fixed-parameters",
+    "href": "pbs/bash-jobs.html#script-with-fixed-parameters",
+    "title": "9  Bash",
+    "section": "9.2 Script with Fixed Parameters",
+    "text": "9.2 Script with Fixed Parameters\n#!/bin/bash\n\n## Describe requirements for computing ----\n#PBS -q secondary \n#PBS -l nodes=1:ppn=1\n#PBS -l walltime=04:00:00\n\n## Set variables ----\nparam1 = 1\nparam2 = 2\n\n## Start simulation study ----\ncd ~/sim-dir\n./sim-script param1 param2"
+  },
+  {
+    "objectID": "pbs/bash-jobs.html#script-with-varying-parameters",
+    "href": "pbs/bash-jobs.html#script-with-varying-parameters",
+    "title": "9  Bash",
+    "section": "9.3 Script with Varying Parameters",
+    "text": "9.3 Script with Varying Parameters\n#!/bin/bash\n\n## Describe requirements for computing ----\n#PBS -q secondary \n#PBS -l nodes=1:ppn=1 \n#PBS -l walltime=04:00:00\n\n## Set array variables ----\nparam1 = ({1, 2, 3})\nparam2 = ({4, 5, 6})\n\n## Start simulation study ----\ncd ~/sim-dir\nfor ((i=0;i<${#param[@]};++i)); do\n    ./sim-script ${param1[i]} ${param2[i]}\ndone"
+  },
+  {
+    "objectID": "pbs/bash-jobs.html#parallelized-script-with-varying-parameters",
+    "href": "pbs/bash-jobs.html#parallelized-script-with-varying-parameters",
+    "title": "9  Bash",
+    "section": "9.4 Parallelized Script with Varying Parameters",
+    "text": "9.4 Parallelized Script with Varying Parameters\n#!/bin/bash\n\n## Describe requirements for computing ----\n#PBS -q secondary \n#PBS -l nodes=1:ppn=3 \n#PBS -l walltime=04:00:00\n\n## Set array variables ----\nparam1=({1,2,3})\nparam2=({4,5,6})\n\n## Start simulation study ----\ncd ~/sim-dir\n\n## Run simulations in parallel ----\nfor ((i=0;i<${#param[@]};++i)); do\n    ./sim-script ${param1[i]} ${param2[i]} & # Ampersand runs script in background\n    process_id[i]=$!                         # Store the Process ID\ndone\n\n## Wait for all processes to complete ----\nfor ((i=0;i<${#param[@]};++i)); do\n    echo \"Awaiting results for ${process_id[i]}.\"\n    wait ${process_id[i]}\ndone"
+  },
+  {
+    "objectID": "pbs/r-jobs.html#sample-simulation-script",
+    "href": "pbs/r-jobs.html#sample-simulation-script",
+    "title": "10  R",
+    "section": "10.1 Sample simulation script",
+    "text": "10.1 Sample simulation script\n# Expect command line args at the end.\nargs = commandArgs(trailingOnly = TRUE)\n# Skip args[1] to prevent getting --args\n\n# Extract and cast as numeric from character\nrnorm(n = as.numeric(args[2]), mean = as.numeric(args[3]))"
+  },
+  {
+    "objectID": "pbs/r-jobs.html#script-with-fixed-parameters",
+    "href": "pbs/r-jobs.html#script-with-fixed-parameters",
+    "title": "10  R",
+    "section": "10.2 Script with Fixed Parameters",
+    "text": "10.2 Script with Fixed Parameters\n#!/bin/bash\n\n## Describe requirements for computing ----\n\n## Set the maximum amount of runtime to 4 Hours\n#PBS -l walltime=04:00:00\n## Request one node with `nodes` and one core with `ppn`\n#PBS -l nodes=1:ppn=1\n#PBS -l naccesspolicy=shared\n## Name the job\n#PBS -N jobname\n## Queue in the secondary queue\n#PBS -q secondary\n## Merge standard output into error output\n#PBS -j oe\n\n## Setup computing environment for job ----\n\n## Create a directory for the data output based ## on PBS_JOBID\nmkdir ${PBS_O_WORKDIR}/${PBS_JOBID}\n\n## Switch directory into job ID (puts all output here)\ncd ${PBS_O_WORKDIR}/${PBS_JOBID} # Load R\n\n## Run simulation ----\n\n## Load latest version of R loaded\nmodule load R/3.6.2\n\n## Run R script in batch mode without file output\nRscript $HOME/sim_runner.R --args 5 10"
+  },
+  {
+    "objectID": "slurm-job-information.html",
+    "href": "slurm-job-information.html",
+    "title": "12  Job Information",
+    "section": "",
+    "text": "Query all jobs within the last day\nsacct --starttime=today --endtime=midnight --format=User,JobID,Jobname%50,partition,state,time,start,end,elapsed,MaxRss,MaxVMSize,nnodes,ncpus,nodelist --units=G\nQuery information for a specific job:\nsacct -j <jobid> --format=User,JobID,Jobname%50,partition,state,time,start,end,elapsed,MaxRss,MaxVMSize,nnodes,ncpus,nodelist\nSee how nodes are configured.\n# Customized information https://ask.cyberinfrastructure.org/t/how-do-i-get-the-list-of-features-and-resources-of-each-node-in-slurm/201\nsinfo -o \"%20N  %10c  %10m  %25f  %10G \"\n\n# Or view a more traditional list:\nscontrol show node\nSee information for a specific node\nscontrol show node \"nodename\"\nView queued job information for yourself\nsqueue --format=\"%.7i %.9P %.8j %.8u %.2t %.10M %.6D %C\" -u $USER\nSee format (-o) options at: https://slurm.schedmd.com/squeue.html"
+  },
+  {
+    "objectID": "creating-modulefiles.html",
+    "href": "creating-modulefiles.html",
+    "title": "13  Creating Modulefiles",
+    "section": "",
+    "text": "14 Self-notes\nUseful references:\nhttps://cea-hpc.github.io/modules/docs/MC2_whitney_paper.pdf https://www.acrc.bris.ac.uk/acrc/pdf/customising-environment-variables.pdf"
+  },
+  {
+    "objectID": "creating-modulefiles.html#sample-module-file",
+    "href": "creating-modulefiles.html#sample-module-file",
+    "title": "13  Creating Modulefiles",
+    "section": "13.1 Sample module file",
+    "text": "13.1 Sample module file\n#%Module1.0####################################################################\n\nproc ModulesHelp { } {\n    global _module_name\n\n    puts stderr \"The $_module_name modulefile defines the default system paths and\"\n    puts stderr \"environment variables needed to use the $_module_name libraries and tools.\"\n    puts stderr \"\"\n}\n\nset _module_name    [module-info name]\n\n## Change to be user-specifc path\nset approot /projects/stat/shared/$::env(USER)/software/libevent/2.1.11\n\nmodule-whatis \"       Name: libevent\"\nmodule-whatis \"  Long name: libevent - An event notification library\"\nmodule-whatis \"    Version: 2.1.11\"\nmodule-whatis \"   Category: library\"\nmodule-whatis \"Description: An event notification library\"\nmodule-whatis \"        URL: https://libevent.org/\"\nmodule-whatis \"\"\n\nif { [ is-loaded gcc/7.2.0 ] } {} else { module load gcc/7.2.0 }\n\nprepend-path    PATH        $approot\nprepend-path    LD_LIBRARY_PATH     $approot/lib\nprepend-path    LD_RUN_PATH         $approot/lib\nprepend-path    MANPATH         $approot/man\nprepend-path --delim \" \" LDFLAGS \"-L $approot/lib\"\nprepend-path --delim \" \" CPPFLAGS \"-I $approot/include\"\nprepend-path --delim \" \" CFLAGS \"-I $approot/include\"\n\nprepend-path by itself is for variables like PATH LD_LIBRARY_PATH, LD_RUN_PATH, LIBRARY_PATH, CPATH, MANPATH …\nprepend-path --delim \" \" is for compiler flag variables like LDFLAGS, CPPFLAGS, CFLAGS, …\nModule dependencies should be specified with:\n\n## Load module if not already loaded.\nif { [ is-loaded <module> ] } {} else { module load <module> }\n\nconflict <module> emphasizes any modules that can’t be loaded together"
+  },
+  {
+    "objectID": "debugging-errors.html#debugging-bad-r-version",
+    "href": "debugging-errors.html#debugging-bad-r-version",
+    "title": "14  Errors",
+    "section": "14.1 Debugging bad R version",
+    "text": "14.1 Debugging bad R version\nNote, per our previous discussion, we request cluster users to load R using the _sandybridge suffix. Failure to load R in this manner will result in:\n*** caught illegal operation ***\naddress 0x2b8c139d59ef, cause 'illegal operand'\nThe error will present itself only when matrix multiplication is present, e.g. %*%."
+  },
+  {
+    "objectID": "debugging-errors.html#remote-compute-jobs",
+    "href": "debugging-errors.html#remote-compute-jobs",
+    "title": "14  Errors",
+    "section": "14.2 Remote Compute Jobs",
+    "text": "14.2 Remote Compute Jobs\nWhen doing a long-running computation with future.batchtools, you may get the following errors under plan(remote)\nclient_loop: send disconnect: Broken pipe\nConnection to <host address> closed by remote host."
+  },
+  {
+    "objectID": "debugging-errors.html#bad-randomize-seed",
+    "href": "debugging-errors.html#bad-randomize-seed",
+    "title": "14  Errors",
+    "section": "14.3 Bad randomize seed",
+    "text": "14.3 Bad randomize seed\nWarning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated random numbers without specifying argument 'seed'. There is a risk that those random numbers are not statistically sound and the overall results might be invalid. To fix this, specify 'seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced via the L'Ecuyer-CMRG method. To disable this check, use 'seed=NULL', or set option 'future.rng.onMisuse' to \"ignore\"."
+  },
+  {
+    "objectID": "debugging-errors.html#global-export-issue",
+    "href": "debugging-errors.html#global-export-issue",
+    "title": "14  Errors",
+    "section": "14.4 Global export issue",
+    "text": "14.4 Global export issue\n  The total size of the 11 globals that need to be exported for the future expression (‘...’) is 747.02 MiB. This exceeds the maximum allowed size of 500.00 MiB (option 'future.globals.maxSize'). The three largest globals are ‘...’ (742.19 MiB of class ‘numeric’), ‘...’ (1.74 MiB of class ‘numeric’) and ‘....’ (1.53 MiB of class ‘numeric’)."
+  }
+]
