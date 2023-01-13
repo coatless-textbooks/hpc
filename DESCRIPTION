@@ -5,7 +5,7 @@ Authors@R: c(
     person("James Joseph", "Balamuta", , "balamut2@illinois.edu", role = c("aut", "cre"))
 URL: https://github.com/coatless-textbooks/hpc
 Depends: 
-    R (>= 3.1.0)
+    R (>= 4.2.0)
 Imports:
     jsonlite,
 Suggests:
