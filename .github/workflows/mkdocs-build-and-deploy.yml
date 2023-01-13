@@ -1,17 +1,42 @@
-# Based off of auto-deploy suggested at:
-# https://squidfunk.github.io/mkdocs-material/publishing-your-site/#with-github-actions
-name: ci
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - master
+    # only trigger on main/master branches, not on tags
+    branches: [main, master]
+
+name: quarto-render
 jobs:
-  deploy:
+  quarto-linux:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
         with:
-          python-version: 3.x
-      - run: pip install mkdocs-material
-      - run: mkdocs gh-deploy --force
+          # To install LaTeX to build PDF book
+          tinytex: true
+
+      # Handle installing R packages from DESCRIPTION file
+      #- uses: r-lib/actions/setup-r-dependencies@v2
+      #  with:
+      #    extra-packages: any::ggplot2, local::.
+
+      # Download latest version of Python
+      # - uses: actions/setup-python@v2
+
+      # Install python dependencies from requirements via pip
+      #- name: "Install Python dependencies via Pip"
+      #  run: |
+      #    pip install -r requirements.txt
+
+      - name: Render Book project
+        uses: quarto-dev/quarto-actions/render@v2
+
+      - name: Publish to GitHub Pages (and render)
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
