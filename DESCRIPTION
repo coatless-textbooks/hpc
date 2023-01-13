@@ -1,0 +1,17 @@
+Package: hpc
+Title: High Performance Computing for R
+Version: 0.1
+Authors@R: c(
+    person("James Joseph", "Balamuta", , "balamut2@illinois.edu", role = c("aut", "cre"))
+URL: https://github.com/coatless-textbooks/hpc
+Depends: 
+    R (>= 3.1.0)
+Imports:
+    jsonlite,
+Suggests:
+    downlit,
+    htmltools,
+    jpeg,
+    knitr
+Encoding: UTF-8
+License: CC NC ND 3.0
