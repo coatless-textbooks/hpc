@@ -316,7 +316,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="cluster-software" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Cluster Software</span></span></h1>
+<h1 class="title"><span id="sec-cluster-software" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Cluster Software</span></span></h1>
 </div>
 
 
@@ -347,7 +347,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="latest-version-of-r" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="latest-version-of-r"><span class="header-section-number">2.3</span> Latest Version of <em>R</em></h2>
-<p>As of <strong>September 2021</strong>, the latest version of <em>R</em> on ICC is <em>R</em> <strong>4.1.1</strong>. We recommend using the latest version of R with the <code>_sandybridge</code> suffix. The reason for using <code>_sandybridge</code> is to ensure compatibility on older nodes inside of the <code>stat</code> partition. For an example of a compatibility error, please see <span class="citation" data-cites="debugging-errors">(<a href="#ref-debugging-errors" role="doc-biblioref"><strong>debugging-errors?</strong></a>)</span>.</p>
+<p>As of <strong>September 2021</strong>, the latest version of <em>R</em> on ICC is <em>R</em> <strong>4.1.1</strong>. We recommend using the latest version of R with the <code>_sandybridge</code> suffix. The reason for using <code>_sandybridge</code> is to ensure compatibility on older nodes inside of the <code>stat</code> partition. For an example of a compatibility error, please see <a href="debugging-errors.html"><span>Chapter&nbsp;14</span></a>.</p>
 <p>Moreover, with this version, the default library does not contain any non-standard packages.</p>
 <p><em>R</em> can be accessed by using:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load software</span></span>
@@ -356,7 +356,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Once <em>R</em> is loaded, the Terminal/non-GUI version of <em>R</em> can be started by typing:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To exit an <em>R</em> session on the cluster, type inside <em>R</em>:</p>
-<pre><code>q(save = "no")</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">q</span>(<span class="at">save =</span> <span class="st">"no"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will terminate the <em>R</em> session without saving any environment values.</p>
 </section>
 <section id="ask-for-help" class="level2" data-number="2.4">

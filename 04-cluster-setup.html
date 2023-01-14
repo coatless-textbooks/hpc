@@ -324,7 +324,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="cluster-setup" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cluster Setup</span></span></h1>
+<h1 class="title"><span id="sec-cluster-setup" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cluster Setup</span></span></h1>
 </div>
 
 
@@ -443,7 +443,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># location for R 4.1.z</span></span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="ex">/home/</span><span class="va">$USER</span><span class="ex">/R/x86_64-pc-linux-gnu-library/4.1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Installing packages into the default location is problematic because any files placed within a user’s home directory count against the directory’s space quota (for limits, please see <span class="citation" data-cites="cluster-storage">(<a href="#ref-cluster-storage" role="doc-biblioref"><strong>cluster-storage?</strong></a>)</span>). As <em>R</em> packages can take a considerable amount of space when installed, the best course of action is to change the default library directory. Therefore, <em>R</em> packages should be either stored in a project directory or a purchased space allocation on the cluster that an investor may purchase.</p>
+<p>Installing packages into the default location is problematic because any files placed within a user’s home directory count against the directory’s space quota (for limits, please see <a href="03-cluster-storage.html"><span>Chapter&nbsp;3</span></a>). As <em>R</em> packages can take a considerable amount of space when installed, the best course of action is to change the default library directory. Therefore, <em>R</em> packages should be either stored in a project directory or a purchased space allocation on the cluster that an investor may purchase.</p>
 <p>The path to an investor’s space is given as:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/projects/</span><span class="op">&lt;</span>investor<span class="op">&gt;</span>/shared/<span class="va">$USER</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Frequently, the cluster staff will create a symlink into the investor’s directory once authorization is given. In the case of <strong>Statistics</strong>, the investor name is <code>stat</code>, so the directory would be either:</p>
@@ -508,12 +508,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="installing-packages-from-github" class="level3" data-number="4.5.2">
 <h3 data-number="4.5.2" class="anchored" data-anchor-id="installing-packages-from-github"><span class="header-section-number">4.5.2</span> Installing Packages from GitHub</h3>
 <p>For packages stored on GitHub, there are two variants for installation depending on the state of the repository. If the repository is <strong>public</strong>, then the standard <code>install_github("user/repo")</code> may be used. On the other hand, if the repository is <strong>private</strong>, the package installation call must be accompanied by a <a href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/"><strong>GitHub Personal Access Token</strong></a> in the <code>auth_token=''</code> parameter of <code>install_github()</code>. In the prior step, if the <code>~/.Renviron</code> contains <code>GITHUB_PAT</code> variable, there is no need to specify in the <code>install_github()</code> call as it will automatically be picked up.</p>
-<pre><code># Install package from GitHub
-Rscript -e "remotes::install_github('coatless/visualize')"
-
-# Install from a private repository on GitHub
-Rscript -e "remotes::install_github('stat385/netid',
-                                     auth_token = 'abc')"</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install package from GitHub</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>Rscript <span class="sc">-</span>e <span class="st">"remotes::install_github('coatless/visualize')"</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Install from a private repository on GitHub</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>Rscript <span class="sc">-</span>e <span class="st">"remotes::install_github('stat447/netid', auth_token = 'abc')"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="parallelized-package-installation" class="level3" data-number="4.5.3">
 <h3 data-number="4.5.3" class="anchored" data-anchor-id="parallelized-package-installation"><span class="header-section-number">4.5.3</span> Parallelized package installation</h3>
