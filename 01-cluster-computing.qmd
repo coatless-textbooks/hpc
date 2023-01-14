@@ -1,4 +1,4 @@
-# Cluster Computing {#cluster-computing}
+# Cluster Computing {#sec-cluster-computing}
 
 ## What is Cluster Computing?
 

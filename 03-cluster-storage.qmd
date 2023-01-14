@@ -1,4 +1,4 @@
-# Storage  {#cluster-storage}
+# Storage {#sec-cluster-storage}
 
 For additional details related to the illinois campus cluster, please the [Storage and Data Guide](https://campuscluster.illinois.edu/resources/docs/storage-and-data-guide/)
 

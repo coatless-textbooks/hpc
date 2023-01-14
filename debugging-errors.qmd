@@ -1,4 +1,4 @@
-# Errors {#debugging-errors}
+# Errors {#sec-debugging-errors}
 
 ## Debugging bad *R* version
 

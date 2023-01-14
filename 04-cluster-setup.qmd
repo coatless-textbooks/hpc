@@ -1,4 +1,4 @@
-# Cluster Setup {#cluster-setup}
+# Cluster Setup {#sec-cluster-setup}
 
 Within this chapter, we will cover establishing a workspace on the Campus Cluster. Workspace setup usually requires about 5 different steps.
 
@@ -155,7 +155,7 @@ GITHUB_PAT="your_github_token_here"
 /home/$USER/R/x86_64-pc-linux-gnu-library/4.1
 ```
 
-Installing packages into the default location is problematic because any files placed within a user's home directory count against the directory's space quota (for limits, please see @cluster-storage). As *R* packages can take a considerable amount of space when installed, the best course of action is to change the default library directory. Therefore, *R* packages should be either stored in a project directory or a purchased space allocation on the cluster that an investor may purchase.
+Installing packages into the default location is problematic because any files placed within a user's home directory count against the directory's space quota (for limits, please see @sec-cluster-storage). As *R* packages can take a considerable amount of space when installed, the best course of action is to change the default library directory. Therefore, *R* packages should be either stored in a project directory or a purchased space allocation on the cluster that an investor may purchase.
 
 The path to an investor's space is given as:
 
@@ -189,7 +189,7 @@ Rscript -e 'dir.create(Sys.getenv("R_LIBS_USER"), recursive = TRUE)'
 
 Under this approach, we have move the location of the default package directory to:
 
-```bash
+``` bash
 ~/project-stat/R/%p-library/%v
 # the expanded version of %p and %v give:
 ~/project-stat/R/x86_64-pc-linux-gnu-library/x.y
@@ -268,12 +268,13 @@ Rscript -e "install.packages('remotes', lib = '~/project-stat/devel-pkg',
 
 For packages stored on GitHub, there are two variants for installation depending on the state of the repository. If the repository is **public**, then the standard `install_github("user/repo")` may be used. On the other hand, if the repository is **private**, the package installation call must be accompanied by a [**GitHub Personal Access Token**](https://help.github.com/articles/creating-an-access-token-for-command-line-use/) in the `auth_token=''` parameter of `install_github()`. In the prior step, if the `~/.Renviron` contains `GITHUB_PAT` variable, there is no need to specify in the `install_github()` call as it will automatically be picked up.
 
-    # Install package from GitHub
-    Rscript -e "remotes::install_github('coatless/visualize')"
+```r
+# Install package from GitHub
+Rscript -e "remotes::install_github('coatless/visualize')"
 
-    # Install from a private repository on GitHub
-    Rscript -e "remotes::install_github('stat385/netid',
-                                         auth_token = 'abc')"
+# Install from a private repository on GitHub
+Rscript -e "remotes::install_github('stat447/netid', auth_token = 'abc')"
+```
 
 ### Parallelized package installation
 
